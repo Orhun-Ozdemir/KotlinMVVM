@@ -20,10 +20,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun buttonToplamaTikla()
+    fun buttonToplamaTikla(alinanSayi1:String,alinanSayi2:String)
     {
-        val alinanSayi1= tasarim.editTextSayi1.text.toString()
-        val alinanSayi2= tasarim.editTextSayi2.text.toString()
+
 
         val sayi1=alinanSayi1.toInt()
         val sayi2=alinanSayi2.toInt()
@@ -33,10 +32,9 @@ class MainActivity : AppCompatActivity() {
         tasarim.textViewSonuc.text=toplam.toString()
 
     }
-    fun buttonCarpmaTikla()
+    fun buttonCarpmaTikla(alinanSayi1:String,alinanSayi2:String)
     {
-        val alinanSayi1= tasarim.editTextSayi1.text.toString()
-        val alinanSayi2= tasarim.editTextSayi2.text.toString()
+
 
         val sayi1=alinanSayi1.toInt()
         val sayi2=alinanSayi2.toInt()
