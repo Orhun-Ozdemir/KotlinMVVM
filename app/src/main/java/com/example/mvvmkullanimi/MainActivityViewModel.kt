@@ -1,10 +1,16 @@
 package com.example.mvvmkullanimi
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel:ViewModel()
 {
-    var sonuc="0"
+    var sonuc=MutableLiveData<String>()
+
+    init {
+        sonuc=MutableLiveData<String>("0")
+
+    }
 
     fun ToplamaYap(alinanSayi1:String,alinanSayi2:String)
     {
@@ -14,7 +20,7 @@ class MainActivityViewModel:ViewModel()
 
         val toplam=sayi1+sayi2
 
-        sonuc=toplam.toString()
+        sonuc.value=toplam.toString()
     }
     fun CarpmaYap(alinanSayi1:String,alinanSayi2:String)
     {
@@ -23,7 +29,7 @@ class MainActivityViewModel:ViewModel()
 
         val toplam=sayi1*sayi2
 
-       sonuc=toplam.toString()
+        sonuc.value=toplam.toString()
     }
 
 

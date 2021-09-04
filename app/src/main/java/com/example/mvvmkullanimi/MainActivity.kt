@@ -18,8 +18,12 @@ class MainActivity : AppCompatActivity() {
         tasarim.mainActivityNesnesi=this
 
 
-        tasarim.hesaplamaSonucu=viewModel.sonuc
 
+
+        viewModel.sonuc.observe(this,{s ->
+
+            tasarim.hesaplamaSonucu=s
+        })
 
     }
 
@@ -27,13 +31,13 @@ class MainActivity : AppCompatActivity() {
     {
         viewModel.ToplamaYap(alinanSayi1,alinanSayi2)
 
-        tasarim.hesaplamaSonucu=viewModel.sonuc
+
     }
     fun buttonCarpmaTikla(alinanSayi1:String,alinanSayi2:String)
     {
         viewModel.CarpmaYap(alinanSayi1,alinanSayi2)
 
-        tasarim.hesaplamaSonucu=viewModel.sonuc
+
     }
 
 
