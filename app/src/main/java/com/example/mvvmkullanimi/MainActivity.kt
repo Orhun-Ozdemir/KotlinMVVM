@@ -12,37 +12,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         tasarim=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        tasarim.mainActivityNesnesi=this
 
 
         tasarim.textViewSonuc.text="0"
 
-        tasarim.buttonToplama.setOnClickListener {
 
-            val alinanSayi1= tasarim.editTextSayi1.text.toString()
-            val alinanSayi2= tasarim.editTextSayi2.text.toString()
+    }
 
-            val sayi1=alinanSayi1.toInt()
-            val sayi2=alinanSayi2.toInt()
+    fun buttonToplamaTikla()
+    {
+        val alinanSayi1= tasarim.editTextSayi1.text.toString()
+        val alinanSayi2= tasarim.editTextSayi2.text.toString()
 
-            val toplam=sayi1+sayi2
+        val sayi1=alinanSayi1.toInt()
+        val sayi2=alinanSayi2.toInt()
 
-            tasarim.textViewSonuc.text=toplam.toString()
+        val toplam=sayi1+sayi2
 
-        }
+        tasarim.textViewSonuc.text=toplam.toString()
 
+    }
+    fun buttonCarpmaTikla()
+    {
+        val alinanSayi1= tasarim.editTextSayi1.text.toString()
+        val alinanSayi2= tasarim.editTextSayi2.text.toString()
 
-        tasarim.buttonCarpma.setOnClickListener {
-            val alinanSayi1= tasarim.editTextSayi1.text.toString()
-            val alinanSayi2= tasarim.editTextSayi2.text.toString()
+        val sayi1=alinanSayi1.toInt()
+        val sayi2=alinanSayi2.toInt()
 
-            val sayi1=alinanSayi1.toInt()
-            val sayi2=alinanSayi2.toInt()
+        val toplam=sayi1*sayi2
 
-            val toplam=sayi1*sayi2
-
-            tasarim.textViewSonuc.text=toplam.toString()
-
-        }
+        tasarim.textViewSonuc.text=toplam.toString()
 
     }
 
