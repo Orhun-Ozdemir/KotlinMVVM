@@ -12,10 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         tasarim=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        // Yetkilendirme işlemi mainActivityNesnesi için
         tasarim.mainActivityNesnesi=this
 
 
-        tasarim.textViewSonuc.text="0"
+        tasarim.hesaplamaSonucu="0"
 
 
     }
@@ -23,26 +24,21 @@ class MainActivity : AppCompatActivity() {
     fun buttonToplamaTikla(alinanSayi1:String,alinanSayi2:String)
     {
 
-
         val sayi1=alinanSayi1.toInt()
         val sayi2=alinanSayi2.toInt()
 
         val toplam=sayi1+sayi2
 
-        tasarim.textViewSonuc.text=toplam.toString()
-
+        tasarim.hesaplamaSonucu=toplam.toString()
     }
     fun buttonCarpmaTikla(alinanSayi1:String,alinanSayi2:String)
     {
-
-
         val sayi1=alinanSayi1.toInt()
         val sayi2=alinanSayi2.toInt()
 
         val toplam=sayi1*sayi2
 
-        tasarim.textViewSonuc.text=toplam.toString()
-
+        tasarim.hesaplamaSonucu=toplam.toString()
     }
 
 
