@@ -17,11 +17,7 @@ class MainActivity : AppCompatActivity() {
         // Yetkilendirme işlemi mainActivityNesnesi için
         tasarim.mainActivityNesnesi=this
 
-
-
-
         viewModel.sonuc.observe(this,{s ->
-
             tasarim.hesaplamaSonucu=s
         })
 
@@ -30,14 +26,10 @@ class MainActivity : AppCompatActivity() {
     fun buttonToplamaTikla(alinanSayi1:String,alinanSayi2:String)
     {
         viewModel.ToplamaYap(alinanSayi1,alinanSayi2)
-
-
     }
     fun buttonCarpmaTikla(alinanSayi1:String,alinanSayi2:String)
     {
         viewModel.CarpmaYap(alinanSayi1,alinanSayi2)
-
-
     }
 
 
