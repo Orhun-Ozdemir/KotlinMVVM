@@ -5,31 +5,26 @@ import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel:ViewModel()
 {
-    var sonuc=MutableLiveData<String>()
 
+    var sonuc=MutableLiveData<String>()
+    var mRepo=MatermatikRepository()
     init {
-        sonuc=MutableLiveData<String>("0")
+        sonuc=mRepo.matematikselSonucGetir()
 
     }
 
     fun ToplamaYap(alinanSayi1:String,alinanSayi2:String)
     {
 
-        val sayi1=alinanSayi1.toInt()
-        val sayi2=alinanSayi2.toInt()
+       mRepo.Topla(alinanSayi1,alinanSayi2)
 
-        val toplam=sayi1+sayi2
 
-        sonuc.value=toplam.toString()
     }
     fun CarpmaYap(alinanSayi1:String,alinanSayi2:String)
     {
-        val sayi1=alinanSayi1.toInt()
-        val sayi2=alinanSayi2.toInt()
+        mRepo.Carp(alinanSayi1,alinanSayi2)
 
-        val toplam=sayi1*sayi2
 
-        sonuc.value=toplam.toString()
     }
 
 
